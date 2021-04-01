@@ -1,0 +1,121 @@
+.homepage {
+  &__section-title {
+    font-size: 4rem;
+    padding-left: 2rem;
+    padding-top: 3rem;
+  }
+}
+
+.header {
+  top: 8rem;
+  position: relative;
+
+  &__background {
+    width: 100%;
+    height: 60rem;
+
+    &__row {
+      height: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__img {
+      height: 100%;
+      width: 25%;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 50rem;
+    height: 40rem;
+    background-color: #ffff;
+    opacity: 0.7;
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__text {
+      opacity: 1;
+      color: var(--color-primary-dark);
+      font-size: 4rem;
+    }
+  }
+
+  &__space {
+    background-color: #ffff;
+    height: 8rem;
+  }
+}
+
+.aboutUs {
+  background-color: #ffff;
+  color: var(--color-text-primary);
+  font-size: 3rem;
+  width: 100%;
+  height: 20rem;
+}
+
+.categories {
+  background-color: #ffff;
+  border-top: 0.2rem solid var(--color-divider);
+  border-bottom: 0.2rem solid var(--color-divider);
+
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__container {
+    width: 15rem;
+    height: 15rem;
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    position: relative;
+    cursor: pointer;
+
+    &__img {
+      height: 100%;
+      background-size: cover;
+      background-position: center center;
+      transition: all 0.5s;
+    }
+
+    &:hover &__img {
+      filter: blur(3px) brightness(80%);
+    }
+
+    &__caption {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -35%);
+      text-align: center;
+      font-size: 2.5rem;
+      color: #ffff;
+      font-weight: 900;
+      text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+  }
+}
+
+.top-recipes {
+  padding-bottom: 5rem;
+
+  &__row {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
