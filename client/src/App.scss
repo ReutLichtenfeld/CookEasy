@@ -2,7 +2,6 @@
   --color-primary: #e91e63;
   --color-primary-light: #f8bbd0;
   --color-primary-dark: #c2185b;
-  --color-accent: #03a9f4;
 
   --color-text-primary: #212121;
   --color-text-secondary: #757575;
@@ -26,6 +25,27 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; //1rem = 10px, 10px/16px =62.5%
+
+  @media (max-width: 75em) {
+    // width < 1200 ?
+    font-size: 56.25%;
+  }
+  @media (max-width: 56.25em) {
+    // width < 900 ?
+    font-size: 50%; //1rem = 8px 8/16 = 50%
+  }
+  @media (max-width: 37.5em) {
+    // width < 600 ?
+    font-size: 40%;
+  }
+  @media (max-width: 25em) {
+    // width < 600 ?
+    font-size: 30%;
+  }
+  @media (min-width: 112.5em) {
+    // width > 1800 ?
+    font-size: 75%;
+  }
 }
 
 body {

@@ -14,14 +14,21 @@
     width: 100%;
     height: 60rem;
 
-    &__row {
+    @media (max-width: 37.5em) {
+      height: 50rem;
+    }
+    @media (max-width: 25em) {
+      height: 40rem;
+    }
+
+    &--row {
       height: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    &__img {
+    &--img {
       height: 100%;
       width: 25%;
     }
@@ -43,6 +50,11 @@
     justify-content: center;
     align-items: center;
 
+    @media (max-width: 25em) {
+      width: 50rem;
+      height: 30rem;
+    }
+
     &__text {
       opacity: 1;
       color: var(--color-primary-dark);
@@ -56,23 +68,27 @@
   }
 }
 
-.aboutUs {
-  background-color: #ffff;
-  color: var(--color-text-primary);
-  font-size: 3rem;
-  width: 100%;
-  height: 20rem;
-}
-
 .categories {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background-color: #ffff;
   border-top: 0.2rem solid var(--color-divider);
   border-bottom: 0.2rem solid var(--color-divider);
 
-  padding: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @media (max-width: 90em) {
+    justify-content: flex-start;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &--scroll {
+    padding: 2rem;
+    display: flex;
+  }
 
   &__container {
     width: 15rem;
@@ -82,18 +98,22 @@
     position: relative;
     cursor: pointer;
 
-    &__img {
+    &:not(:last-child) {
+      margin-right: 3.5rem;
+    }
+
+    &--img {
       height: 100%;
       background-size: cover;
       background-position: center center;
       transition: all 0.5s;
     }
 
-    &:hover &__img {
+    &:hover &--img {
       filter: blur(3px) brightness(80%);
     }
 
-    &__caption {
+    &--caption {
       position: absolute;
       top: 50%;
       left: 50%;

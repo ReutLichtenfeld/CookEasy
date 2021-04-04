@@ -28,17 +28,17 @@ const HomePage = ({ fetchTopRecipes }) => {
             <div className="header">
 
                 <div className="header__background">
-                    <div className="header__background__row">
-                        <img src={img1} alt='recipe-1' className='header__background__img'/>
-                        <img src={img2} alt='recipe-2' className='header__background__img'/>
-                        <img src={img3} alt='recipe-3' className='header__background__img'/>
-                        <img src={img4} alt='recipe-4' className='header__background__img'/>
+                    <div className="header__background--row">
+                        <img src={img1} alt='recipe-1' className='header__background--img'/>
+                        <img src={img2} alt='recipe-2' className='header__background--img'/>
+                        <img src={img3} alt='recipe-3' className='header__background--img'/>
+                        <img src={img4} alt='recipe-4' className='header__background--img'/>
                     </div>
-                    <div className="header__background__row">
-                        <img src={img5} alt='recipe-5' className='header__background__img'/>
-                        <img src={img6} alt='recipe-6' className='header__background__img'/>
-                        <img src={img7} alt='recipe-7' className='header__background__img'/>
-                        <img src={img8} alt='recipe-8' className='header__background__img'/>
+                    <div className="header__background--row">
+                        <img src={img5} alt='recipe-5' className='header__background--img'/>
+                        <img src={img6} alt='recipe-6' className='header__background--img'/>
+                        <img src={img7} alt='recipe-7' className='header__background--img'/>
+                        <img src={img8} alt='recipe-8' className='header__background--img'/>
                     </div>
                 </div>
                 
@@ -54,14 +54,16 @@ const HomePage = ({ fetchTopRecipes }) => {
 
             <h1 className="homepage__section-title">Categories</h1>
             <div className="categories">
-                <Categorie name='Healthy' key='1' />
-                <Categorie name='Easy' key='2' />
-                <Categorie name='Breakfast' key='3' />
-                <Categorie name='Lunch' key='4' />
-                <Categorie name='Dinner' key='5' />
-                <Categorie name='Dessert' key='6' />
-                <Categorie name='Chicken' key='7' />
-                <Categorie name='Vegeterian' key='8' />    
+                <div className="categories--scroll">
+                    <Categorie name='Healthy' key='1' />
+                    <Categorie name='Easy' key='2' />
+                    <Categorie name='Breakfast' key='3' />
+                    <Categorie name='Lunch' key='4' />
+                    <Categorie name='Dinner' key='5' />
+                    <Categorie name='Dessert' key='6' />
+                    <Categorie name='Chicken' key='7' />
+                    <Categorie name='Vegeterian' key='8' />    
+                </div>
             </div>
 
             <TopMostPopular />
