@@ -28,18 +28,14 @@ const HomePage = ({ fetchTopRecipes }) => {
             <div className="header">
 
                 <div className="header__background">
-                    <div className="header__background--row">
-                        <img src={img1} alt='recipe-1' className='header__background--img'/>
-                        <img src={img2} alt='recipe-2' className='header__background--img'/>
-                        <img src={img3} alt='recipe-3' className='header__background--img'/>
-                        <img src={img4} alt='recipe-4' className='header__background--img'/>
-                    </div>
-                    <div className="header__background--row">
-                        <img src={img5} alt='recipe-5' className='header__background--img'/>
-                        <img src={img6} alt='recipe-6' className='header__background--img'/>
-                        <img src={img7} alt='recipe-7' className='header__background--img'/>
-                        <img src={img8} alt='recipe-8' className='header__background--img'/>
-                    </div>
+                    <img src={img1} alt='recipe-1' className='header__background-img'/>
+                    <img src={img2} alt='recipe-2' className='header__background-img'/>
+                    <img src={img3} alt='recipe-3' className='header__background-img'/>
+                    <img src={img4} alt='recipe-4' className='header__background-img'/>
+                    <img src={img5} alt='recipe-5' className='header__background-img'/>
+                    <img src={img6} alt='recipe-6' className='header__background-img'/>
+                    <img src={img7} alt='recipe-7' className='header__background-img'/>
+                    <img src={img8} alt='recipe-8' className='header__background-img'/>
                 </div>
                 
                 <div className="header__title">

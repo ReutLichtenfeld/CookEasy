@@ -13,6 +13,8 @@
   &__background {
     width: 100%;
     height: 60rem;
+    display: flex;
+    flex-wrap: wrap;
 
     @media (max-width: 37.5em) {
       height: 50rem;
@@ -21,15 +23,8 @@
       height: 40rem;
     }
 
-    &--row {
+    &-img {
       height: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    &--img {
-      height: 100%;
       width: 25%;
     }
   }
@@ -90,7 +85,7 @@
     display: flex;
   }
 
-  &__container {
+  &__item {
     width: 15rem;
     height: 15rem;
     shape-outside: circle(50% at 50% 50%);
@@ -102,18 +97,18 @@
       margin-right: 3.5rem;
     }
 
-    &--img {
+    &__img {
       height: 100%;
       background-size: cover;
       background-position: center center;
       transition: all 0.5s;
     }
 
-    &:hover &--img {
+    &:hover &__img {
       filter: blur(3px) brightness(80%);
     }
 
-    &--caption {
+    &__caption {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -137,5 +132,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
   }
 }

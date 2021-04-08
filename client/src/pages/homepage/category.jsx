@@ -15,9 +15,9 @@ const Categorie = ({fetchResults, name}) => {
     }
 
     return (
-        <div className="categories__container" onClick={handleClick}>
-            <div style={{backgroundImage: `url(/img/categories/${img}.jpg)`}} className="categories__container--img" />
-            <h4 className="categories__container--caption"> {`${name}`} </h4>
+        <div className="categories__item" onClick={handleClick}>
+            <div style={{backgroundImage: `url(/img/categories/${img}.jpg)`}} className="categories__item__img" />
+            <h4 className="categories__item__caption"> {`${name}`} </h4>
         </div>
     )
 };

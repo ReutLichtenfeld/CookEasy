@@ -11,6 +11,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 37.5em) {
+    height: 8.5rem;
+  }
 }
 
 .logo-container {
@@ -20,17 +24,41 @@
   justify-content: center;
   align-items: center;
 
-  .logo {
-    height: 100%;
-  }
+  // @media (max-width: 56.25em) {
+  //   &::after {
+  //     content: "CookEasy";
+  //     color: var(--color-primary);
+  //     font-size: 2.2rem;
+  //     font-family: Cursive;
+  //   }
+  // }
+}
+
+.logo {
+  height: 100%;
 }
 
 .search {
-  flex: 0 0 30%;
+  font-size: 1.7rem;
+  flex: 0 0 35%;
+  align-self: center;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 75em) {
+    font-size: 1.9rem;
+    flex: 0 0 45%;
+  }
+  @media (max-width: 56.25em) {
+    font-size: 2.2rem;
+    flex: 0 0 50%;
+  }
+  @media (max-width: 37.5em) {
+    font-size: 2.5rem;
+    flex: 0 0 60%;
+  }
 
   &__input {
     font-family: inherit;
@@ -72,18 +100,56 @@
     height: 2rem;
     width: 2rem;
     fill: var(--color-text-secondary);
+
+    @media (max-width: 56.25em) {
+      height: 2.2rem;
+      width: 2.2rem;
+    }
+    @media (max-width: 37.5em) {
+      height: 2.6rem;
+      width: 2.6rem;
+    }
   }
 }
 
 .user-nav {
+  align-self: stretch;
   display: flex;
   align-items: center;
   justify-content: center;
+
   padding-right: 1rem;
 
-  &__likes {
-    height: 80%;
+  & > * {
+    height: 100%;
+    padding: 0 0.5rem;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+
+    display: flex;
+    align-items: center;
+  }
+
+  & > *:hover {
+    //background-color: #f4f2f2;
     color: var(--color-primary);
+  }
+
+  &__likes {
+    &--icon {
+      width: 3rem;
+      height: 3rem;
+      fill: currentColor;
+
+      @media (max-width: 56.25em) {
+        height: 3.3rem;
+        width: 3.3rem;
+      }
+      @media (max-width: 37.5em) {
+        height: 3.5rem;
+        width: 3.5rem;
+      }
+    }
   }
 
   &__sign {

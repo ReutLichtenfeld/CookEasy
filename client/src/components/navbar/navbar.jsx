@@ -1,11 +1,10 @@
-import { React, useState } from 'react';
+import { React, useState } from 'react'
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import logo from '../../img/logo-pink.png';
 import { ReactComponent as SearchIcon } from '../../img/search-icon.svg';
-// import { ReactComponent as HeartIconFull } from '../../img/heart-circle.svg';
-// import { ReactComponent as HeartIconOutline } from '../../img/heart-circle-outline.svg';
+import { ReactComponent as HeartIcon } from '../../img/heart-icon.svg';
 
 import { fetchResultsStart } from '../../redux/search-results/search-results.actions';
 
@@ -52,8 +51,7 @@ const NavBar = ({ fetchResults }) => {
 
             <div className="user-nav">
                 <div className="user-nav__likes">
-                    {/* <HeartIconOutline className="user-nav__likes--not-pressed" />
-                    <HeartIconFull className="user-nav__likes--pressed" /> */}
+                    <HeartIcon className="user-nav__likes--icon" />
                 </div>
                 {/* <div className="user-nav__sign">Sign Up / Login</div> */}
             </div>

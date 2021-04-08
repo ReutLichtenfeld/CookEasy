@@ -1,12 +1,21 @@
 .recipe-card {
   margin: 2%;
-  width: 21%;
-  //width: 30rem;
+  flex: 0 0 21%;
   height: 48rem;
-  //border: 0.2rem solid var(--color-divider);
   cursor: pointer;
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  @media (max-width: 50em) {
+    margin: 2%;
+    flex: 0 0 29.3%;
+  }
+
+  @media (max-width: 37.5em) {
+    margin: 2%;
+    flex: 0 0 46%;
+    height: 54rem;
+  }
 
   &__img {
     width: 100%;
@@ -29,11 +38,23 @@
     h1 {
       font-size: 3rem;
       line-height: 1.5;
+
+      @media (max-width: 37.5em) {
+        font-size: 3.2rem;
+      }
     }
 
     p {
       font-size: 1.5rem;
       padding-bottom: 1rem;
+
+      @media (max-width: 50em) {
+        font-size: 1.7rem;
+      }
+
+      @media (max-width: 37.5em) {
+        font-size: 1.9rem;
+      }
     }
   }
 
