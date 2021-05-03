@@ -1,6 +1,8 @@
-import { React, useState } from 'react'
+import { React, useState } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+
+import LikesDropdown from '../likes-dropdown/likes-dropdowm';
 
 import logo from '../../img/logo-pink.png';
 import { ReactComponent as SearchIcon } from '../../img/search-icon.svg';
@@ -35,6 +37,11 @@ const NavBar = ({ fetchResults }) => {
         window.scrollTo(0, 0);
     }
 
+    const handleLikesClick = () => {
+        history.push('/my-likes');
+        window.scrollTo(0, 0);
+    }
+
     return (
         <div className="navbar-container">
 
@@ -51,7 +58,12 @@ const NavBar = ({ fetchResults }) => {
 
             <div className="user-nav">
                 <div className="user-nav__likes">
-                    <HeartIcon className="user-nav__likes--icon" />
+                    <HeartIcon className="user-nav__likes__icon" onClick={handleLikesClick}/>
+                    <div className="user-nav__likes__dropdown">
+                        <div className="user-nav__likes__dropdown-content" >
+                            <LikesDropdown />
+                        </div>
+                    </div>
                 </div>
                 {/* <div className="user-nav__sign">Sign Up / Login</div> */}
             </div>

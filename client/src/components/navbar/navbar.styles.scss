@@ -12,7 +12,7 @@
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) {
     height: 8.5rem;
   }
 }
@@ -23,15 +23,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  // @media (max-width: 56.25em) {
-  //   &::after {
-  //     content: "CookEasy";
-  //     color: var(--color-primary);
-  //     font-size: 2.2rem;
-  //     font-family: Cursive;
-  //   }
-  // }
 }
 
 .logo {
@@ -47,15 +38,15 @@
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 75em) {
+  @media only screen and (max-width: 75em) {
     font-size: 1.9rem;
     flex: 0 0 45%;
   }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     font-size: 2.2rem;
     flex: 0 0 50%;
   }
-  @media (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) {
     font-size: 2.5rem;
     flex: 0 0 60%;
   }
@@ -101,11 +92,11 @@
     width: 2rem;
     fill: var(--color-text-secondary);
 
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       height: 2.2rem;
       width: 2.2rem;
     }
-    @media (max-width: 37.5em) {
+    @media only screen and (max-width: 37.5em) {
       height: 2.6rem;
       width: 2.6rem;
     }
@@ -136,22 +127,66 @@
   }
 
   &__likes {
-    &--icon {
-      width: 3rem;
-      height: 3rem;
+    flex-direction: column;
+
+    &__icon {
+      flex: 1;
+      width: var(--width-icon);
+      height: var(--width-icon);
       fill: currentColor;
 
-      @media (max-width: 56.25em) {
-        height: 3.3rem;
-        width: 3.3rem;
+      @media only screen and (max-width: 56.25em) {
+        height: var(--width-icon-5625em);
+        width: var(--width-icon-5625em);
       }
-      @media (max-width: 37.5em) {
-        height: 3.5rem;
-        width: 3.5rem;
+      @media only screen and (max-width: 37.5em) {
+        height: var(--width-icon-375em);
+        width: var(--width-icon-375em);
+      }
+    }
+
+    &__dropdown {
+      position: relative;
+      display: inline-block;
+
+      &-content {
+        display: none;
+        position: absolute;
+        z-index: 1;
+      }
+    }
+
+    &:hover &__dropdown-content {
+      display: block;
+      right: calc(var(--width-dropdown-item) - var(--width-icon));
+      width: 100%;
+
+      @media only screen and (max-width: 56.25em) {
+        right: calc(
+          var(--width-dropdown-item-5625em) - var(--width-icon-5625em)
+        );
+      }
+
+      @media only screen and (max-width: 37.5em) {
+        right: calc(var(--width-dropdown-item-375em) - var(--width-icon-375em));
+      }
+
+      @media (hover: none) {
+        display: none;
       }
     }
   }
 
   &__sign {
   }
+}
+
+:root {
+  --width-icon: 3rem;
+  --width-icon-5625em: 3.3rem;
+  --width-icon-375em: 3.5rem;
+
+  --width-dropdown-item: 25rem;
+  --width-dropdown-item-5625em: 26rem;
+  --width-dropdown-item-375em: 27rem;
 }

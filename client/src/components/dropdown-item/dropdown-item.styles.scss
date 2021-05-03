@@ -1,0 +1,66 @@
+.dropdown-item {
+  height: 8rem;
+  width: var(--width-dropdown-item);
+  padding: 0.5rem;
+  background-color: #fff;
+  cursor: pointer;
+  border-bottom: 0.1rem solid var(--color-divider);
+  display: flex;
+
+  &:hover {
+    background-color: rgb(231, 229, 229);
+  }
+
+  &:hover &__delete-btn {
+    background-color: rgb(231, 229, 229);
+  }
+
+  @media only screen and(max-width: 56.25em) {
+    height: 9rem;
+    width: var(--width-dropdown-item-5625em);
+  }
+
+  @media only screen and (max-width: 37.5em) {
+    height: 10rem;
+    width: var(--width-dropdown-item-375em);
+  }
+
+  &__img {
+    flex: 0 0 40%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    color: var(--color-text-primary);
+    padding: 0.5rem;
+    margin-right: auto;
+  }
+
+  &__delete-btn {
+    border: none;
+    background-color: #fff;
+    flex: 0 0 2rem;
+    height: 2rem;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+
+  &__delete-icon {
+    color: var(--color-text-secondary);
+    fill: currentColor;
+
+    &:hover {
+      color: var(--color-text-primary);
+    }
+  }
+}

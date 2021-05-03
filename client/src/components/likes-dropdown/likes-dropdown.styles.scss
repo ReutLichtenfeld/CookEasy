@@ -1,0 +1,20 @@
+.likes-dropdown {
+  &__btn {
+    height: 8rem;
+    width: var(--width-dropdown-item);
+    padding: 0.5rem;
+    background-color: #fff;
+    cursor: pointer;
+    border: none;
+    border-bottom: 0.1rem solid var(--color-divider);
+    font-size: 2rem;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: rgb(231, 229, 229);
+    }
+  }
+}

@@ -1,9 +1,24 @@
+import { connect } from 'react-redux';
+
+import { addRecipeToLikes, removeRecipeFromLikes } from '../../redux/likes/likes.actions';
+
+import { ReactComponent as HeartCircle } from '../../img/heart-circle.svg';
+import { ReactComponent as HeartCircleOutline } from '../../img/heart-circle-outline.svg';
+
 import './recipe-card.styles.scss';
 
-const RecipeCard = ({recipe}) => {
-    const {picture, name, ranking, description, author} = recipe;
+const RecipeCard = ({ recipe, addRecipeToLikes, removeRecipeFromLikes, likedRecipes }) => {
 
-    // Determing amount of stars
+    const {picture, name, ranking, description, author, _id} = recipe;
+
+    let isLiked;
+    if(likedRecipes.find(recipe => recipe._id === _id)){
+        isLiked = true;
+    } else {
+        isLiked = false;
+    }
+
+    // Determening amount of stars
     const fullStars = Math.round(ranking);
     const emptyStars = 5 - fullStars;
     let fullStarsArr = [];
@@ -13,6 +28,14 @@ const RecipeCard = ({recipe}) => {
     };
     for (let i = 0; i < emptyStars; i++) {
         emptyStarsArr.push(true);          
+    };
+
+    const handleLikeClick = () => {
+        if(isLiked) {
+            removeRecipeFromLikes(recipe);
+        } else {
+            addRecipeToLikes(recipe);
+        }
     };
 
     return (
@@ -27,8 +50,23 @@ const RecipeCard = ({recipe}) => {
                 <p className="recipe-card__description">{`${description}`}</p>
                 <p className="recipe-card__author">{`By ${author}`}</p>
             </div>
+            <div className="recipe-card__like-btn" onClick={ handleLikeClick }>
+                { isLiked
+                    ? <HeartCircle className="recipe-card__like-btn__img" />
+                    : <HeartCircleOutline className="recipe-card__like-btn__img" />
+                }
+            </div>
         </div>
     );
 };
 
-export default RecipeCard;
+const mapStateToProps = state => ({
+    likedRecipes: state.likes.likedRecipes
+});
+
+const mapDispatchToProps = dispatch => ({
+    addRecipeToLikes: recipe => dispatch(addRecipeToLikes(recipe)),
+    removeRecipeFromLikes: recipe => dispatch(removeRecipeFromLikes(recipe))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(RecipeCard);

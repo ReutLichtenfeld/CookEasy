@@ -85,6 +85,19 @@
     display: flex;
   }
 
+  &__title {
+    font-size: 4rem;
+    padding-left: 2rem;
+    padding-top: 3rem;
+
+    @media (max-width: 90em) {
+      &::after {
+        content: "\2192";
+        padding-left: 1rem;
+      }
+    }
+  }
+
   &__item {
     width: 15rem;
     height: 15rem;

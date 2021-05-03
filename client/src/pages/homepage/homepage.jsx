@@ -48,7 +48,7 @@ const HomePage = ({ fetchTopRecipes }) => {
 
             <div className="header__space"></div>
 
-            <h1 className="homepage__section-title">Categories</h1>
+            <h1 className="categories__title">Categories</h1>
             <div className="categories">
                 <div className="categories--scroll">
                     <Categorie name='Healthy' key='1' />
